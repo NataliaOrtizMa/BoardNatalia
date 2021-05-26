@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now}
 });
 
-userSchema.methods.generateJWT = () => {
+userSchema.methods.generateJWT = function() {
     return jwt.sign({
         _id: this._id,
         name: this.name,
