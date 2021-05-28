@@ -3,12 +3,24 @@ const router = express.Router();
 const Board = require("../models/board");
 const User = require("../models/user");
 const Auth = require("../middleware/auth");
+const validateBoard = require("../middleware/board");
 
-router.post("/createTask", Auth, async(req, res) => {
+async function verifyUser(req, res) {
     const user = await User.findById(req.user._id);
-    if(!user) return res.status(400).send("Usuario no autenticado");
+    if(!user) {
+        res.status(400).send("Error en usuario");
+        return;
+    }
+    else {
+        return user;
+    }
+}
+
+router.post("/createTask", Auth, validateBoard, async(req, res) => {
+    user = await verifyUser(req, res);
+    if(!user) return;
     const board = new Board ({
-        userId: user._id,
+        userId: req.body._id,
         name: req.body.name,
         description: req.body.description,
         status: "to-do",
@@ -18,15 +30,15 @@ router.post("/createTask", Auth, async(req, res) => {
 });
 
 router.get("/getTasks", Auth, async(req,res) => {
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("La persona no existe en DB");
+    user = await verifyUser(req, res);
+    if(!user) return;
     const board = await Board.find({userId: req.user._id});
     return res.status(200).send({board});
 });
 
 router.put("/editTask", Auth, async(req, res) =>{
-    const user = await User.findById(req.user._id);
-    if(!user) return res.status(401).send("No existe el usuario");
+    user = await verifyUser(req, res);
+    if(!user) return;
     const board = await Board.findByIdAndUpdate(req.body._id, {
         userId: user._id,
         name: req.body.name,
@@ -38,8 +50,8 @@ router.put("/editTask", Auth, async(req, res) =>{
 });
 
 router.delete("/:_id", Auth, async(req, res) =>{
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(401).send("No existe el usuario");
+    user = await verifyUser(req, res);
+    if(!user) return;
     const board = await Board.findByIdAndDelete(req.params._id);
     if(!board) return res.status(401).send("No hay tarea para eliminar");
     return res.status(200).send("Actividad eliminada");

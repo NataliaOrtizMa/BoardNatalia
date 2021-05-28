@@ -7,7 +7,7 @@ const auth = (req, res, next) => {
     if (!jwtToken) return res.status(401).send("Autorización rechazada: No hay un token");
     try {
         const payload = jwt.verify(jwtToken, "secretJWT");
-        req.user = payload;
+        req.    user = payload;
         next();
     } catch (error) {
         return res.status(401).send("Autorización rechazada: Token inválido")
