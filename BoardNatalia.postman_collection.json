@@ -1,0 +1,967 @@
+{
+	"info": {
+		"_postman_id": "5b3e3029-c8ac-40ab-91cb-f8918bb13a4a",
+		"name": "BoardNatalia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test 1: Role",
+			"item": [
+				{
+					"name": "createRole User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"description\": \"Normal user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/role/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRole Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"description\": \"Admin of the page\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/role/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/role/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"role",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 2: User",
+			"item": [
+				{
+					"name": "newUser 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepito Perez\",\r\n    \"email\": \"pepito@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newUser 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepita Perla\",\r\n    \"email\": \"pepita@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newUser 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Natalia Ortiz\",\r\n    \"email\": \"nataliaortizma@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 3: Login",
+			"item": [
+				{
+					"name": "authUser Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nataliaortizma@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authUser User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pepito@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authUser User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pepita@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 4: Board",
+			"item": [
+				{
+					"name": "createTask 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Create body layout\",\r\n    \"description\": \"Frontend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/createTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"createTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTask 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Create repository\",\r\n    \"description\": \"Github\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/createTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"createTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTask 3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Create header layout\",\r\n    \"description\": \"Frontend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/createTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"createTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTask1 User2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5NDI4OTcwYjAwZDQyOWNiMDc5YzYiLCJuYW1lIjoiUGVwaXRhIFBlcmxhIiwiZW1haWwiOiJwZXBpdGFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUzOTMyfQ.72_Q49PkQjrtVnXe9w7ZCoh_VGlOJISihZTrcU4Q7t4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Create routes\",\r\n    \"description\": \"Backend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/createTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"createTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/board/getTasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"getTasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b93d569b006943a00cc1c7\",\r\n    \"name\": \"Create body layout\",\r\n    \"description\": \"Frontend\",\r\n    \"status\": \"doing\",\r\n    \"imageUrl\": \"http://localhost:4001/uploads/task-image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/editTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"editTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadTask Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Create header layout",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Frontend",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/KEYCODE/RickMortyAPI/assets/img/Rick_and_Morty_-_logo_(English).png"
+								},
+								{
+									"key": "_id",
+									"value": "60b93d6e9b006943a00cc1c9",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "to-do",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "60b93a259b006943a00cc1c3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/uploadImage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTask (DeactivateTask)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b93d569b006943a00cc1c7\",\r\n    \"name\": \"Create body layout\",\r\n    \"description\": \"Frontend\",\r\n    \"imageUrl\": \"http://localhost:4001/uploads/task-image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/board/deleteTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"deleteTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTask (Definitely)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyNTliMDA2OTQzYTAwY2MxYzMiLCJuYW1lIjoiUGVwaXRvIFBlcmV6IiwiZW1haWwiOiJwZXBpdG9AZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTM5ZjY5YjAwNjk0M2EwMGNjMWMxIiwiaWF0IjoxNjIyNzUyNDc3fQ.cCidkjP_XsQXVxja2RnjUA80VWANJLuYKfZssutTDpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/board/deleteTask/60b93d569b006943a00cc1c7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"deleteTask",
+								"60b93d569b006943a00cc1c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 5: Admin",
+			"item": [
+				{
+					"name": "newAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{tokenAndmin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juanito Jaramillo\",\r\n    \"email\": \"juanito@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b8eca6eb0b6d180c7a69dc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/newAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"newAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/user/getUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers/pep",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/user/getUsers/pep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"getUsers",
+								"pep"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers/Natalia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/user/getUsers/Natalia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"getUsers",
+								"Natalia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b93a289b006943a00cc1c4\",\r\n    \"name\": \"Pepita Perla\",\r\n    \"email\": \"pepitap@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b8eba7eb0b6d180c7a69db\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser (DeactivateUser)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b93a289b006943a00cc1c4\",\r\n    \"name\": \"Pepita Perla\",\r\n    \"email\": \"pepitap@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b8eba7eb0b6d180c7a69db\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser (Definitely)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/user/delete/60b93a289b006943a00cc1c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"60b93a289b006943a00cc1c4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBoards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5M2EyYjliMDA2OTQzYTAwY2MxYzUiLCJuYW1lIjoiTmF0YWxpYSBPcnRpeiIsImVtYWlsIjoibmF0YWxpYW9ydGl6bWFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiOTNhMTU5YjAwNjk0M2EwMGNjMWMyIiwiaWF0IjoxNjIyNzUyMTg0fQ.1jzA6bLE-iqdOWbaoJIaYkmBpfmM36oWjdcmRq8Y7G8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/board/getBoards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"board",
+								"getBoards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,15 +1,9 @@
-function validateData(req, res, next) {
-    const {name, email, password} = req.body;
-    if(!name) { 
-        return res.status(400).send("No se envió el nombre");
-    }
-    if(!email) { 
-        return res.status(400).send("No se envió el email");
-    }
-    if(!password) { 
-        return res.status(400).send("No se envió el password");
-    }
-    next();
-}
+const User = require("../models/user");
 
-module.exports = validateData;
+const UserAuth = async(req, res, next) => {
+    const user = await User.findById(req.user._id);
+    if (!user) return res.status(401).send("Process failed: Error in user");
+    next();
+};
+
+module.exports = UserAuth;
