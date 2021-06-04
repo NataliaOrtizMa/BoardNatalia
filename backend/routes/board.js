@@ -29,8 +29,17 @@ router.put("/uploadImage", Upload.single("image"), Auth, UserAuth, async(req, re
         !req.body.description ||
         !req.body.status)
         return res.status(401).send("Rejected request: Incomplete data");
-    
-    if (!req.file) return res.status(401).send("No file found")
+
+    let imageUrl = "";
+    const url = req.protocol + "://" + req.get("host");
+
+    if (!req.file) {
+        // If no file found take same url it had previously
+        boardId = await Board.findById(req.body._id);
+        imageUrl = boardId.imageUrl;
+        // return res.status(401).send("No file found")
+    }
+        
     if (req.file) {
         if (req.file.mimetype !== "image/png" &&
             req.file.mimetype !== "image/jpg" &&
@@ -38,13 +47,10 @@ router.put("/uploadImage", Upload.single("image"), Auth, UserAuth, async(req, re
             req.file.mimetype !== "image/bmp" &&
             req.file.mimetype !== "image/gif") 
             return res.status(401).send("Accepted formats .png .jpg .jpeg .bmp .gif");
+            if (req.file !== undefined || req.file.filename) {
+                imageUrl = url + "/uploads/" + req.file.filename;
+            }
     };
-
-    const url = req.protocol + "://" + req.get("host");
-    let imageUrl = "";
-    if (req.file !== undefined || req.file.filename) {
-        imageUrl = url + "/uploads/" + req.file.filename;
-    }
 
     const board = await Board.findByIdAndUpdate(req.body._id, {
         userId: req.user._id,
