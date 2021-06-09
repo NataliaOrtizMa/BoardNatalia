@@ -1,0 +1,11 @@
+.bgHeader {
+    background-color: slateblue;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.header-spacer {
+    flex: 1 1 auto;
+}
