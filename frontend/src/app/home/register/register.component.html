@@ -1,1 +1,36 @@
-<p>register works!</p>
+<div class="form">
+    <mat-card class="card">
+        <mat-card-title>Sign In</mat-card-title>
+        <div class="col-12 col-lg-12" *ngIf="successMessage">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <div class="alert-message"> {{ successMessage }}
+                    <button type="button" class="close btn-close" (click)="closeAlert(0)" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-12" *ngIf="errorMessage">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div class="alert-message"> {{ errorMessage }}
+                    <button type="button" class="close btn-close" (click)="closeAlert(0)" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+                
+            </div>
+        </div>
+        <mat-card-content>
+            <div class="container">
+                <mat-form-field>
+                    <input type="text" [(ngModel)]="registerData.name" matInput placeholder="Name" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" [(ngModel)]="registerData.email" matInput placeholder="Email" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" [(ngModel)]="registerData.password" matInput placeholder="Password" required>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="registerUser()" class="button" mat-raised-button>Sign In</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
