@@ -15,4 +15,7 @@ export class AuthService {
   registerUser(user: any) {
     return this.http.post(this.env + "user/newUser", user)
   }
+  login(user: any) {
+    return this.http.post(this.env + "auth/login", user)
+  }
 }

@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./save-task.component.css']
 })
 export class SaveTaskComponent implements OnInit {
+  public taskData: any;
+  public errorMessage: String;
 
-  constructor() { }
+  constructor() {
+    this.taskData = {};
+    this.errorMessage = '';
+   }
 
   ngOnInit(): void {
+  }
+
+  saveTask() {}
+
+  closeAlert(time: number) {
+    setTimeout(() => {
+      this.errorMessage = '';
+    }, time)
   }
 
 }

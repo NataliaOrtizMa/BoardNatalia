@@ -1,13 +1,6 @@
 <div class="form">
     <mat-card class="card">
         <mat-card-title>Sign In</mat-card-title>
-        <div class="col-12 col-lg-12" *ngIf="successMessage">
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <div class="alert-message"> {{ successMessage }}
-                    <button type="button" class="close btn-close" (click)="closeAlert(0)" data-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
         <div class="col-12 col-lg-12" *ngIf="errorMessage">
             <div class="alert alert-danger alert-dismissible" role="alert">
                 <div class="alert-message"> {{ errorMessage }}
