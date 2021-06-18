@@ -28,7 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
@@ -67,7 +67,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AuthService,
     AuthGuard,
     BoardService,
-    TokenInterceptionService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptionService,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })
