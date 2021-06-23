@@ -127,7 +127,7 @@ router.delete("/deleteTask/:_id?", Auth, UserAuth, async(req, res) =>{
     if (!validId) return res.status(401).send("Rejected request: Invalid Id");
     const board = await Board.findByIdAndDelete(req.params._id);
     if(!board) return res.status(401).send("Error in request");
-    return res.status(200).send("Task Deleted");
+    return res.status(200).json("Task Deleted");
 })
 
 module.exports = router;

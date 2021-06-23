@@ -36,8 +36,8 @@
                             <span class="text_center">{{ task.name }}</span>
                             <span class="spacer"></span>
                             <button class="btnToDo" *ngIf="task.status == 'to-do'" mat-button>{{ task.status }}</button>
-                            <button class="btnDoing" *ngIf="task.status == 'doing'" mat-raised-button>{{ task.status }}</button>
-                            <button class="btnDone" *ngIf="task.status == 'done'" mat-raised-button>{{ task.status }}</button>
+                            <button class="btnDoing" *ngIf="task.status == 'doing'" mat-button>{{ task.status }}</button>
+                            <button class="btnDone" *ngIf="task.status == 'done'" mat-button>{{ task.status }}</button>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
 

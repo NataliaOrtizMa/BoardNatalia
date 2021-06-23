@@ -22,7 +22,7 @@ export class BoardService {
     return this.http.put<any>(this.env + 'board/editTask', board);
   }
   deleteTask(board: any){
-    return this.http.delete<any>(this.env + 'board/deleteTask' + board._id);
+    return this.http.delete<any>(this.env + 'board/deleteTask/' + board._id);
   }
 
 }
