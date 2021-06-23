@@ -13,9 +13,16 @@ export class BoardService {
   }
 
   saveTask(board: any) {
-    return this.http.post(this.env + 'board/createTask', board);
+    return this.http.post<any>(this.env + 'board/createTask', board);
   }
   listTasks() {
-    return this.http.get(this.env + 'board/getTasks');
+    return this.http.get<any>(this.env + 'board/getTasks');
   }
+  updateTask(board: any){
+    return this.http.put<any>(this.env + 'board/editTask', board);
+  }
+  deleteTask(board: any){
+    return this.http.delete<any>(this.env + 'board/deleteTask' + board._id);
+  }
+
 }

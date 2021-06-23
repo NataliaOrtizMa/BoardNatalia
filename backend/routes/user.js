@@ -45,7 +45,7 @@ router.post("/newAdmin", Auth, UserAuth, AdminAuth, async(req,res) => {
     if (!validRoleId) return res.status(401).send("Rejected request: Invalid role id");
 
     let user = await User.findOne({email: req.body.email});
-    if (user) return res.status(401).send("Reject request: This user already exists");
+    if (user) return res.status(401).send("Rejected request: This user already exists");
 
     const hash = await bcrypt.hash(req.body.password, 10);
     user = new User ({
@@ -116,7 +116,7 @@ router.put("/delete", Auth, UserAuth, AdminAuth, async(req, res) => {
     return res.status(200).send({user})
 });
 
-router.delete("/delete/:_id", Auth, UserAuth, AdminAuth, async(req, res) => {
+router.delete("/delete/:_id?", Auth, UserAuth, AdminAuth, async(req, res) => {
     const validId = mongoose.Types.ObjectId.isValid(req.params._id);
     if (!validId) return res.status(401).send("Rejected requet: Invalid Id");
     const user = await User.findByIdAndDelete(req.params._id);
